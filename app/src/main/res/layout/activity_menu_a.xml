@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/c1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DCEDFD">
@@ -12,10 +13,10 @@
         android:layout_height="181dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="234dp"
+        android:contentDescription="@string/Watchflix"
         app:layout_constraintBottom_toTopOf="@+id/buttonSeries"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
-        app:layout_constraintStart_toEndOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher" />
 
@@ -29,7 +30,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="69dp"
         android:layout_marginRight="69dp"
-        android:text="Movies"
+        android:text="@string/movies"
         app:backgroundTint="#030420"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +46,7 @@
         android:layout_marginEnd="69dp"
         android:layout_marginRight="69dp"
         android:layout_marginBottom="100dp"
-        android:text="Series"
+        android:text="@string/series"
         app:backgroundTint="#030420"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,18 +55,19 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="43dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="666dp"
+        android:layout_width="61dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="350dp"
+        android:layout_marginRight="350dp"
+        android:layout_marginBottom="657dp"
         app:backgroundTint="#DCEDFD"
         app:icon="@drawable/baseline_arrow_back_24"
         app:iconSize="25dp"
         app:iconTint="#030420"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/flow2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button5"
@@ -75,29 +77,16 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Sign Out"
+        android:text="@string/Sign_Out"
         app:backgroundTint="#A7A7A7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSeries" />
 
     <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/flow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flow2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
-        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -7,4 +7,7 @@
     <string name="sign_in">Sign In</string>
     <string name="Watchflix">Watchflix</string>
     <string name="StringDefault">Watchflix\n</string>
+    <string name="movies">Movies</string>
+    <string name="series">Series</string>
+    <string name="Sign_Out">Sign Out</string>
 </resources>
