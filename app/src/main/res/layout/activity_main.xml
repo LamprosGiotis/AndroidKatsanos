@@ -34,17 +34,16 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/UsernameField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.418"
+        app:layout_constraintVertical_bias="1.0"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
     <TextView
         android:id="@+id/Passwordlabel"
         android:layout_width="139dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="4dp"
         android:background="#DCEDFD"
         android:gravity="center_horizontal"
         android:text="@string/password"
@@ -54,7 +53,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/PasswordField"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
@@ -62,13 +60,13 @@
         android:id="@+id/PasswordField"
         android:layout_width="355dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="20dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
@@ -102,7 +100,7 @@
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/Passwordlabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
