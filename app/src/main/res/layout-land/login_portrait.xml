@@ -12,10 +12,9 @@
         android:id="@+id/imageView"
         android:layout_width="317dp"
         android:layout_height="98dp"
-        android:layout_marginTop="32dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/watchflix" />
@@ -24,7 +23,6 @@
         android:id="@+id/UsernameLabel"
         android:layout_width="233dp"
         android:layout_height="40dp"
-        android:layout_marginTop="52dp"
         android:background="#DCEDFD"
         android:gravity="center_horizontal"
         android:text="@string/username"
@@ -43,7 +41,6 @@
         android:id="@+id/Passwordlabel"
         android:layout_width="139dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="4dp"
         android:background="#DCEDFD"
         android:gravity="center_horizontal"
         android:text="@string/password"
@@ -66,7 +63,7 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
@@ -75,7 +72,7 @@
         style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="359dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="260dp"
+        android:layout_marginBottom="4dp"
         android:background="#00BCD4"
         android:backgroundTint="@color/black"
         android:foregroundGravity="center"
@@ -87,20 +84,19 @@
         app:backgroundTint="#030420"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/UsernameField"
         android:layout_width="355dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/Passwordlabel"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
