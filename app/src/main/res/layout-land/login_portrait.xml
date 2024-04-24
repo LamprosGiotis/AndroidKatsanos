@@ -10,11 +10,12 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="317dp"
-        android:layout_height="98dp"
+        android:layout_width="214dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="8dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/watchflix" />
@@ -32,15 +33,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/UsernameField"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.666"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
     <TextView
         android:id="@+id/Passwordlabel"
         android:layout_width="139dp"
         android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
         android:background="#DCEDFD"
         android:gravity="center_horizontal"
         android:text="@string/password"
@@ -50,6 +53,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/PasswordField"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="horizontal_only" />
 
@@ -91,6 +95,7 @@
         android:id="@+id/UsernameField"
         android:layout_width="355dp"
         android:layout_height="64dp"
+        android:layout_marginBottom="8dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:inputType="text"
