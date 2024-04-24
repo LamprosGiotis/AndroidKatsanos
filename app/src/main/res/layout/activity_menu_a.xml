@@ -5,7 +5,9 @@
     android:id="@+id/c1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCEDFD">
+    android:background="#DCEDFD"
+    android:visibility="visible"
+    tools:visibility="visible">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -77,6 +79,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@android:drawable/alert_light_frame"
         android:text="@string/Sign_Out"
         app:backgroundTint="#A7A7A7"
         app:layout_constraintBottom_toBottomOf="parent"
