@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DCEDFD"
+    tools:context=".RegisterActivity">
+
+    <EditText
+        android:id="@+id/PasswordField"
+        android:layout_width="355dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="368dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="password"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_wrapBehaviorInParent="horizontal_only" />
+
+    <TextView
+        android:id="@+id/Passwordlabel"
+        android:layout_width="139dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="316dp"
+        android:layout_marginBottom="16dp"
+        android:background="#DCEDFD"
+        android:gravity="center_horizontal"
+        android:text="@string/password"
+        android:textAlignment="center"
+        android:textColor="#030420"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/PasswordField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_wrapBehaviorInParent="horizontal_only" />
+
+    <EditText
+        android:id="@+id/UsernameField"
+        android:layout_width="355dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="224dp"
+        android:layout_marginBottom="24dp"
+        android:autofillHints="username"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/Passwordlabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_wrapBehaviorInParent="horizontal_only" />
+
+    <TextView
+        android:id="@+id/UsernameLabel"
+        android:layout_width="233dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="144dp"
+        android:background="#DCEDFD"
+        android:gravity="center_horizontal"
+        android:textAlignment="center"
+        android:text="@string/username"
+        android:textColor="#030420"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/UsernameField"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857"
+        app:layout_wrapBehaviorInParent="horizontal_only" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="317dp"
+        android:layout_height="98dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/watchflix" />
+
+    <TextView
+        android:id="@+id/confirmPasswordLabel"
+        android:layout_width="233dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="460dp"
+        android:background="#DCEDFD"
+        android:gravity="center_horizontal"
+        android:text="@string/confirm_password"
+        android:textColor="#030420"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
