@@ -8,6 +8,25 @@
     android:background="#DCEDFD"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="339dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00BCD4"
+        android:backgroundTint="@color/black"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/sign_up"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:backgroundTint="#030420"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="214dp"
@@ -63,6 +82,8 @@
         android:layout_marginBottom="20dp"
         android:background="#FFFFFF"
         android:ems="10"
+        android:hint="@string/password"
+        android:autofillHints="password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,9 +94,11 @@
     <Button
         android:id="@+id/LoginButton"
         style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="359dp"
+        android:layout_width="339dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="16dp"
         android:background="#00BCD4"
         android:backgroundTint="@color/black"
         android:foregroundGravity="center"
@@ -83,12 +106,10 @@
         android:text="@string/sign_in"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:backgroundTint="#030420"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/registerButton" />
 
     <EditText
         android:id="@+id/UsernameField"
@@ -97,6 +118,8 @@
         android:layout_marginBottom="8dp"
         android:background="#FFFFFF"
         android:ems="10"
+        android:hint="@string/username"
+        android:autofillHints="username"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/Passwordlabel"
         app:layout_constraintEnd_toEndOf="parent"

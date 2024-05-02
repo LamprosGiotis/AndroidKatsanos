@@ -60,6 +60,8 @@
         android:layout_marginBottom="20dp"
         android:background="#FFFFFF"
         android:ems="10"
+        android:hint="@string/password"
+        android:autofillHints="password"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,10 +96,32 @@
         android:layout_marginBottom="24dp"
         android:background="#FFFFFF"
         android:ems="10"
+        android:hint="@string/username"
+        android:autofillHints="username"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/Passwordlabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_wrapBehaviorInParent="horizontal_only" />
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="359dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="124dp"
+        android:background="#00BCD4"
+        android:backgroundTint="@color/black"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/sign_up"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:backgroundTint="#030420"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginButton"
+        app:layout_constraintVertical_bias="0.902" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

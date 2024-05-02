@@ -10,4 +10,6 @@
     <string name="movies">Movies</string>
     <string name="series">Series</string>
     <string name="Sign_Out">Sign Out</string>
+    <string name="Sign_Up" />
+    <string name="sign_up">Sign Up</string>
 </resources>
