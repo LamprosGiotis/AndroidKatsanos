@@ -19,9 +19,6 @@
             android:name=".ViewsMActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewsMovieActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="false"
             android:theme="@style/Theme.KatsanosErgasia" />
