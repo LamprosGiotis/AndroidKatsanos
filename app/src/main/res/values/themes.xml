@@ -3,21 +3,10 @@
     <style name="Base.Theme.KatsanosErgasia" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@LoginRegister/my_light_primary</item> -->
-        <item name="colorPrimary">@color/ic_launcher_background</item>
-        <item name="android:background">@color/ic_launcher_background</item>
-        <item name="android:navigationBarColor" tools:targetApi="lollipop">
-            @color/ic_launcher_background
-        </item>
+        <item name = "colorPrimary">@color/ic_launcher_background</item>
+        <item name = "android:background">@color/ic_launcher_background</item>
+        <item name = "android:navigationBarColor" tools:targetApi="lollipop">@color/ic_launcher_background</item>
     </style>
 
     <style name="Theme.KatsanosErgasia" parent="Base.Theme.KatsanosErgasia" />
-
-    <style name="Theme.KatsanosErgasia.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.KatsanosErgasia.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="Theme.KatsanosErgasia.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
