@@ -55,4 +55,7 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="Clear_all" />
+    <string name="clear_all">Clear all</string>
+    <string name="Return">return</string>
 </resources>
