@@ -11,15 +11,17 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="305dp"
-        android:layout_height="181dp"
+        android:layout_width="288dp"
+        android:layout_height="157dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="234dp"
         android:contentDescription="@string/Watchflix"
         app:layout_constraintBottom_toTopOf="@+id/buttonSeries"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189"
         app:srcCompat="@mipmap/ic_launcher" />
 
     <Button
@@ -29,31 +31,29 @@
         android:layout_height="113dp"
         android:layout_marginStart="69dp"
         android:layout_marginLeft="69dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="96dp"
         android:layout_marginEnd="69dp"
         android:layout_marginRight="69dp"
         android:text="@string/movies"
         app:backgroundTint="#030420"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSeries"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.447" />
 
     <Button
         android:id="@+id/buttonSeries"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="245dp"
         android:layout_height="113dp"
-        android:layout_marginStart="69dp"
-        android:layout_marginLeft="69dp"
-        android:layout_marginEnd="69dp"
-        android:layout_marginRight="69dp"
-        android:layout_marginBottom="100dp"
         android:text="@string/series"
         app:backgroundTint="#030420"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.797" />
 
     <Button
         android:id="@+id/button4"
@@ -76,15 +76,16 @@
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="@android:drawable/alert_light_frame"
         android:text="@string/Sign_Out"
         app:backgroundTint="#A7A7A7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSeries" />
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSeries"
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flow2"
@@ -98,5 +99,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left" />
+
+    <SearchView
+        android:layout_width="349dp"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.358" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
