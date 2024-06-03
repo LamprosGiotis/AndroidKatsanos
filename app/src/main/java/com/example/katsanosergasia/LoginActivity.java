@@ -11,6 +11,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+/**
+ * @Author Lampros Giotis
+ * Σχετική Περιγραφή:Αυτή η κλάση αναπαριστά ένα Login Αctivity μαζί με διάφορες μεθόδους για την ορθή υλοποίηση του.
+ */
 public class LoginActivity extends AppCompatActivity {
 
     @Override
@@ -23,7 +27,13 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    /**
+     * Αυτή η μέθοδος διασυνδέει το Login με το Register Activity αναθέτοντας την λειτουργία της μεθόδου στο κουμπί "Sign Up"
+     * @param view Το νέο activity που θα περάσουμε
+     */
     public void openSignUp(View view){
+        //Κατευθείαν καλούμε το νεο activity(Και ορίζουμε το OnClick attribute στο κουμπί Sign Up
         startActivity(new Intent(this,SignUpActivity.class));
     }
 
