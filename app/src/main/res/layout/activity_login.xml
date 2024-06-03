@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="317dp"
-        android:layout_height="98dp"
+        android:layout_width="214dp"
+        android:layout_height="95dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,6 +72,7 @@
     <Button
         android:id="@+id/LoginButton"
         style="@style/Widget.AppCompat.Button.Small"
+        android:text="@string/sign_in"
         android:layout_width="359dp"
         android:layout_height="64dp"
         android:layout_marginBottom="260dp"
@@ -79,7 +80,6 @@
         android:backgroundTint="@color/black"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="@string/sign_in"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="20sp"

@@ -9,13 +9,149 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="317dp"
-        android:layout_height="98dp"
+        android:layout_width="214dp"
+        android:layout_height="95dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/watchflix" />
 
+    <TextView
+        android:id="@+id/UsernameLabel"
+        android:layout_width="233dp"
+        android:layout_height="40dp"
+        android:background="#DCEDFD"
+        android:gravity="center_horizontal"
+        android:text="@string/username"
+        android:textAlignment="center"
+        android:textColor="#030420"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/PasswordLabel"
+        android:layout_width="139dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="#DCEDFD"
+        android:gravity="center_horizontal"
+        android:text="@string/password"
+        android:textAlignment="center"
+        android:textColor="#030420"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UsernameTextfield" />
+
+    <EditText
+        android:id="@+id/UsernameTextfield"
+        android:layout_width="355dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="username"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UsernameLabel" />
+
+    <EditText
+        android:id="@+id/PasswordTextfield"
+        android:layout_width="355dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:autofillHints="password"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordLabel" />
+
+    <TextView
+        android:id="@+id/ConfirmPasswordLabel"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="#DCEDFD"
+        android:gravity="center"
+        android:text="@string/confirm_password"
+        android:textAlignment="center"
+        android:textColor="#030420"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordTextfield" />
+
+    <EditText
+        android:id="@+id/ConfirmPasswordTextfield"
+        android:layout_width="355dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="password"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordLabel" />
+
+    <Button
+        android:id="@+id/SignUpButton"
+        android:layout_width="359dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="12dp"
+        android:background="#00BCD4"
+        android:backgroundTint="@color/black"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/sign_up"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:backgroundTint="#030420"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ClearButton" />
+
+    <Button
+        android:id="@+id/ClearButton"
+        android:layout_width="359dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        android:background="#00BCD4"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/clear_all"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:backgroundTint="@android:color/secondary_text_light_nodisable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordTextfield" />
+
+    <ImageButton
+        android:id="@+id/ReturnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/ic_launcher_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,8 +10,6 @@
     <string name="movies">Movies</string>
     <string name="series">Series</string>
     <string name="Sign_Out">Sign Out</string>
-    <string name="Sign_Up" />
-    <string name="sign_up">Sign Up</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -58,4 +56,5 @@
     <string name="Clear_all" />
     <string name="clear_all">Clear all</string>
     <string name="Return">return</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
