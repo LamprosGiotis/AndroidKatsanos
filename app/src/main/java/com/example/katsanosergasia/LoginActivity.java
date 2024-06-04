@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Αυτή η μέθοδος διασυνδέει το Login με το Register Activity αναθέτοντας την λειτουργία της μεθόδου στο κουμπί "Sign Up"
-     * @param view Το νέο activity που θα περάσουμε
+     * @param view Το activity που βρισκόμαστε τώρα
      */
     public void openSignUp(View view){
         //Κατευθείαν καλούμε το νεο activity(Και ορίζουμε το OnClick attribute στο κουμπί Sign Up

@@ -137,6 +137,7 @@
         android:textAllCaps="true"
         android:textColor="#000000"
         android:textSize="20sp"
+        android:onClick="clearAll"
         app:backgroundTint="@android:color/secondary_text_light_nodisable"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
