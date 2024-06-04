@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 /**
- * @Author Lampros Giotis
+ * {@code @Author} Lampros Giotis
  * Σχετική Περιγραφή:Αυτή η κλάση αναπαριστά ένα Login Αctivity μαζί με διάφορες μεθόδους για την ορθή υλοποίηση του.
  */
 public class LoginActivity extends AppCompatActivity {
