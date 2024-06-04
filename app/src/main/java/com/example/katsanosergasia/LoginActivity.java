@@ -36,5 +36,14 @@ public class LoginActivity extends AppCompatActivity {
         //Κατευθείαν καλούμε το νεο activity(Και ορίζουμε το OnClick attribute στο κουμπί Sign Up
         startActivity(new Intent(this,SignUpActivity.class));
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
 
 }

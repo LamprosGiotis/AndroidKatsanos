@@ -1,10 +1,14 @@
 package com.example.katsanosergasia;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ScrollView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -14,7 +18,6 @@ import androidx.core.view.WindowInsetsCompat;
  * Σχετική Περιγραφή:Αυτή η κλάση αναπαριστά ένα Register Αctivity μαζί με διάφορες μεθόδους για την ορθή υλοποίηση του.
  */
 public class SignUpActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,11 +31,22 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     /**
-     * Παρόμοια με την OpenLogin μέθοδο.Διασυνδέει την register με την login.
+     * Παρόμοια με την OpenRegister μέθοδο.Διασυνδέει την register με την login.
      * @param view
      */
     public void openLogin(View view){
         //Ανοίγουμε κατευθείαν την login
         startActivity(new Intent(this, LoginActivity.class));
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+    }
+
+
 }
