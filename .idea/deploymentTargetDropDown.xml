@@ -2,40 +2,17 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="MainActivity">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\Lampros Giotis\.android\avd\Pixel_3_API_VanillaIceCream.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-06-02T20:22:53.171393900Z" />
-        </State>
-      </entry>
-      <entry key="RegisterActivity">
+      <entry key="LoginActivity">
         <State />
       </entry>
-      <entry key="SignUpActivity">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\Lampros Giotis\.android\avd\Pixel_3_API_VanillaIceCream.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-06-03T21:41:00.123757100Z" />
-        </State>
+      <entry key="MovieListMain">
+        <State />
+      </entry>
+      <entry key="MoviesOrSeries">
+        <State />
+      </entry>
+      <entry key="SeriesListMain">
+        <State />
       </entry>
       <entry key="app">
         <State />

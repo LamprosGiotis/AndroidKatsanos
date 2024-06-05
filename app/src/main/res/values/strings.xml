@@ -53,8 +53,15 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="confirm_password">Confirm Password</string>
+    <string name="item_image_description">item_image_description</string>
+    <string name="item_title">Item_title</string>
+    <string name="item_rating">Item_rating</string>
+    <string name="item_duration">Item_duration</string>
+    <string name="item_date">Item_date</string>
     <string name="Clear_all" />
     <string name="clear_all">Clear all</string>
     <string name="Return">return</string>
     <string name="sign_up">Sign Up</string>
+    <string name="choose_movies">Movies</string>
+    <string name="choose_series">Series</string>
 </resources>
