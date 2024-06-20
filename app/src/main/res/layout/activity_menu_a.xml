@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DCEDFD"
-    android:visibility="visible"
-    tools:visibility="visible">
+    android:tooltipText="Search for a movie or series">
 
     <ImageView
         android:id="@+id/imageView3"
@@ -60,8 +59,6 @@
         android:layout_width="61dp"
         android:layout_height="60dp"
         android:layout_marginTop="14dp"
-        android:layout_marginEnd="350dp"
-        android:layout_marginRight="350dp"
         android:layout_marginBottom="657dp"
         app:backgroundTint="#DCEDFD"
         app:icon="@drawable/baseline_arrow_back_24"
@@ -69,7 +66,10 @@
         app:iconTint="#030420"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button5"
@@ -101,9 +101,12 @@
         app:barrierDirection="left" />
 
     <SearchView
+        android:id="@+id/searchView"
         android:layout_width="349dp"
         android:layout_height="64dp"
         android:background="#FFFFFF"
+        android:queryHint="Search for a movie or series"
+        android:tooltipText="Search for a movie or series"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
