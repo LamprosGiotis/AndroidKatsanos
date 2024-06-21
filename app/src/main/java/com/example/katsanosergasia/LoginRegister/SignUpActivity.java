@@ -1,4 +1,4 @@
-package com.example.katsanosergasia;
+package com.example.katsanosergasia.LoginRegister;
 
 import android.content.Intent;
 
@@ -12,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.katsanosergasia.LoginRegister.LoginActivity;
+import com.example.katsanosergasia.R;
 
 /**
  * {@code @Author} Lampros Giotis

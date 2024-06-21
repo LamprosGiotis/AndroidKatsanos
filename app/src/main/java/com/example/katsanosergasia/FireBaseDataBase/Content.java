@@ -1,4 +1,4 @@
-package com.example.katsanosergasia;
+package com.example.katsanosergasia.FireBaseDataBase;
 
 import java.io.Serializable;
 

@@ -1,5 +1,5 @@
 
-package com.example.katsanosergasia;
+package com.example.katsanosergasia.FireBaseDataBase;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.katsanosergasia.R;
 
 import java.io.IOException;
 import java.io.InputStream;

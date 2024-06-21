@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".LoginRegister.SignUpActivity">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -92,6 +92,7 @@
                 android:ems="10"
                 android:hint="@string/username"
                 android:inputType="text"
+                android:saveEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent"
@@ -123,6 +124,7 @@
                 android:ems="10"
                 android:hint="@string/password"
                 android:inputType="textPassword"
+                android:saveEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/passwordLabelLandscape" />
@@ -153,6 +155,7 @@
                 android:ems="10"
                 android:hint="@string/confirm_password"
                 android:inputType="textPassword"
+                android:saveEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/confirmLabelLandscape" />

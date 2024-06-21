@@ -13,37 +13,37 @@
         android:theme="@style/Theme.KatsanosErgasia"
         tools:targetApi="31">
         <activity
-            android:name=".SeriesListMain"
+            android:name=".Series.SeriesListMain"
             android:exported="true" />
         <activity
-            android:name=".MovieListMain"
+            android:name=".Movies.MovieListMain"
             android:exported="true" />
         <activity
-            android:name=".SeriesList"
+            android:name=".Series.SeriesList"
             android:exported="true" />
         <activity
-            android:name=".MovieList"
+            android:name=".Movies.MovieList"
             android:exported="true" />
         <activity
-            android:name=".Content"
+            android:name=".FireBaseDataBase.Content"
             android:exported="false" />
         <activity
-            android:name=".ContentDetailsActivity"
+            android:name=".FireBaseDataBase.ContentDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".FirebaseHelper"
+            android:name=".FireBaseDataBase.FirebaseHelper"
             android:exported="false" />
         <activity
-            android:name=".ViewsSActivity"
+            android:name=".MainMenu.ViewsSActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewsMActivity"
+            android:name=".MainMenu.ViewsMActivity"
             android:exported="false" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".LoginRegister.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".LoginRegister.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.inten.action.MAIN" />
