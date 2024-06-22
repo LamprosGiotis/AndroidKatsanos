@@ -1,15 +1,15 @@
-package com.example.katsanosergasia;
+package com.example.katsanosergasia.LoginRegister;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.katsanosergasia.R;
 
 /**
  * {@code @Author} Lampros Giotis
@@ -30,11 +30,11 @@ public class LoginActivity extends AppCompatActivity {
 
     /**
      * Αυτή η μέθοδος διασυνδέει το Login με το Register Activity αναθέτοντας την λειτουργία της μεθόδου στο κουμπί "Sign Up"
-     * @param view Το activity που βρισκόμαστε τώρα
+     * @param view Το activity που θέλουμε να ανοίξουμε(Register(
      */
     public void openSignUp(View view){
         //Κατευθείαν καλούμε το νεο activity(Και ορίζουμε το OnClick attribute στο κουμπί Sign Up
-        startActivity(new Intent(this,SignUpActivity.class));
+        startActivity(new Intent(this, SignUpActivity.class));
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {

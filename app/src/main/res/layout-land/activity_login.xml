@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DCEDFD"
-    tools:context=".LoginActivity">
+    tools:context=".LoginRegister.LoginActivity">
 
     <Button
         android:id="@+id/registerButton"
@@ -86,6 +86,7 @@
         android:hint="@string/password"
         android:autofillHints="password"
         android:inputType="textPassword"
+        android:saveEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
@@ -122,6 +123,7 @@
         android:hint="@string/username"
         android:autofillHints="username"
         android:inputType="text"
+        android:saveEnabled="true"
         app:layout_constraintBottom_toTopOf="@+id/Passwordlabel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
