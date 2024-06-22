@@ -1,5 +1,6 @@
 package com.example.katsanosergasia;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -14,10 +15,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 
+import java.util.List;
+
 public class MovieListMain extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
     RecyclerView.Adapter<MovieList.ViewHolder> adapter;
+    private List<Integer> imageList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +36,13 @@ public class MovieListMain extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         //Set my Adapter for the RecyclerView
-        adapter = new MovieList();
+        adapter = new MovieList(this, imageList);
         recyclerView.setAdapter(adapter);
+    }
+
+
+    public void onButtonClick(int position){
+        Intent intent = new Intent(MovieListMain.this, ViewsMActivity.class);
+        startActivity(intent);
     }
 }

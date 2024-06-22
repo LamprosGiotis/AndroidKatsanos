@@ -1,16 +1,24 @@
 package com.example.katsanosergasia;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.List;
+
 public class MovieList extends RecyclerView.Adapter<MovieList.ViewHolder> {
+
+
+
     private final String[] titles = {"lock stock", "snatch", "sin city", "fight club",
             "se7en", "carlito's way", "Donnie Brasco", "Heat"};
     private final String[] ratings = {"9", "9", "3",
@@ -26,8 +34,17 @@ public class MovieList extends RecyclerView.Adapter<MovieList.ViewHolder> {
             R.drawable.sincity, R.drawable.fightclub, R.drawable.se7en,
             R.drawable.carlito, R.drawable.donnie, R.drawable.heat };
 
+    private Context context;
+    private List<Integer> imageList;
+
+    public MovieList(Context context, List<Integer> imageList) {
+        this.context = context;
+        this.imageList = imageList;
+    }
+
+
     //Class that holds the items to be displayed (Views in card_layout)
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         ImageView itemImage;
         TextView itemTitle;
         TextView itemRating;
@@ -45,16 +62,21 @@ public class MovieList extends RecyclerView.Adapter<MovieList.ViewHolder> {
 
 
 
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     int position = getAdapterPosition();
-
-                    Snackbar.make(v, "Click detected on item " + position,
-                            Snackbar.LENGTH_LONG).show();
+                    if (position != RecyclerView.NO_POSITION) {
+                        Intent intent = new Intent(context, ViewsMActivity.class);
+                        intent.putExtra("imageResId", imageList.get(position));
+                        context.startActivity(intent);
+                    }
                 }
             });
         }
     }
+
+
 
     //Methods that must be implemented for a RecyclerView.Adapter
     @NonNull
