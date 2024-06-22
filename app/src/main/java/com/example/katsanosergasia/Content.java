@@ -64,4 +64,8 @@ public class Content implements Serializable {
     public boolean isMovie() {
         return isMovie;
     }
+
+    public void setMovie(boolean movie) {
+        isMovie = movie;
+    }
 }

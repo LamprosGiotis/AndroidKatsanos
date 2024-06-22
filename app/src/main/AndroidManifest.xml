@@ -26,22 +26,25 @@
             android:exported="true" />
         <activity
             android:name=".Content"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ContentDetailsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".FirebaseHelper"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ViewsSActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ViewsMActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="false" />
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
