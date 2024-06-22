@@ -1,4 +1,4 @@
-package com.example.katsanosergasia;
+package com.example.katsanosergasia.MainMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.katsanosergasia.FireBaseDataBase.Content;
+import com.example.katsanosergasia.FireBaseDataBase.FirebaseHelper;
+import com.example.katsanosergasia.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -43,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             public void onContentDataReceived(Content content) {
                 if (content != null) {
                     Log.d(TAG, "Content received: " + content.getTitle());
-                    Intent intent = new Intent(MainActivity.this, ContentDetailsActivity.class);
+                    Intent intent = new Intent(MainActivity.this, com.example.katsanosergasia.FireBaseDataBase.ContentDetailsActivity.class);
                     intent.putExtra("content", content);
                     startActivity(intent);
                 } else {

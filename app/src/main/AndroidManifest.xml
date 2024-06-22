@@ -43,6 +43,9 @@
             android:name=".LoginRegister.SignUpActivity"
             android:exported="false" />
         <activity
+            android:name=".MainMenu.MainActivity"
+            android:exported="true"/>
+        <activity
             android:name=".LoginRegister.LoginActivity"
             android:exported="true">
             <intent-filter>

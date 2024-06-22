@@ -1,4 +1,4 @@
-package com.example.katsanosergasia;
+package com.example.katsanosergasia.FireBaseDataBase;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.katsanosergasia.FireBaseDataBase.Content;
+import com.example.katsanosergasia.R;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -122,4 +124,3 @@ public class ContentDetailsActivity extends AppCompatActivity {
     }
 
 }
-

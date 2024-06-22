@@ -18,6 +18,22 @@
           <timeTargetWasSelectedWithDropDown value="2024-06-16T14:37:47.778226700Z" />
         </State>
       </entry>
+      <entry key="MainActivity (1)">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\Lampros Giotis\.android\avd\Pixel_3_API_VanillaIceCream.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-06-22T15:01:47.126755100Z" />
+        </State>
+      </entry>
       <entry key="app">
         <State />
       </entry>
