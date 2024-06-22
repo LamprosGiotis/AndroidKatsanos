@@ -1,4 +1,4 @@
-package com.example.katsanosergasia;
+package com.example.katsanosergasia.Movies;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.katsanosergasia.R;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MovieList extends RecyclerView.Adapter<MovieList.ViewHolder> {
