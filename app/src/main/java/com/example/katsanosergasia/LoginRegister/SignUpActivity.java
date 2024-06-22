@@ -1,7 +1,6 @@
 package com.example.katsanosergasia.LoginRegister;
 
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -25,9 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
     TextView usernameTextfield;
     TextView passwordTextfield;
     TextView confirmPasswordTextfield;
-    TextView usernameTextfieldLandscape;
-    TextView passwordTextfieldlandscape;
-    TextView confirmPasswordTextfieldlandscape;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,15 +39,12 @@ public class SignUpActivity extends AppCompatActivity {
         usernameTextfield = findViewById(R.id.UsernameTextfield);
         passwordTextfield = findViewById(R.id.PasswordTextfield);
         confirmPasswordTextfield = findViewById(R.id.ConfirmPasswordTextfield);
-        usernameTextfieldLandscape = findViewById(R.id.UsernameTextfieldLandscape);
-        passwordTextfieldlandscape = findViewById(R.id.PasswordtextfieldLandscape);
-        confirmPasswordTextfieldlandscape = findViewById(R.id.ConfirmTextfieldLandscape);
     }
 
     /**
      * Παρόμοια με την OpenRegister μέθοδο.Διασυνδέει την register με την login.
      *
-     * @param view To activity που βρισκόμαστε τώρα(Login)
+     * @param view To activity που θέλουμε να ανοίξουμε(Register)
      */
     public void openLogin(View view) {
         //Ανοίγουμε κατευθείαν την login
@@ -69,9 +63,6 @@ public class SignUpActivity extends AppCompatActivity {
             clearField(usernameTextfield);//Αφαιρούμε την τρέχουσα τιμή του field,ομοίως και για τα υπόλοιπα fields,ασχέτως το orientation
             clearField(passwordTextfield);
             clearField(confirmPasswordTextfield);
-            clearField(usernameTextfieldLandscape);
-            clearField(passwordTextfieldlandscape);
-            clearField(confirmPasswordTextfieldlandscape);
             Toast.makeText(this, "Fields cleared", Toast.LENGTH_SHORT).show();//Επίσης αφήνουμε ακόμη ένα μήνυμα ενημέρωσης
         }
     }
@@ -94,10 +85,8 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean areAllFieldsEmpty() {
         return isEmpty(usernameTextfield) &&
                 isEmpty(passwordTextfield) &&
-                isEmpty(confirmPasswordTextfield) &&
-                isEmpty(usernameTextfieldLandscape) &&
-                isEmpty(passwordTextfieldlandscape) &&
-                isEmpty(confirmPasswordTextfieldlandscape);
+                isEmpty(confirmPasswordTextfield);
+
     }
     /**
      * Αυτή η μέθοδος ελέχγει εάν ένα field είναι άδειο,αθροιστικά θα το κάνει για όλα απο την areAllFieldsEmpty
@@ -107,15 +96,38 @@ public class SignUpActivity extends AppCompatActivity {
     private boolean isEmpty(TextView textView) {
         return textView == null || textView.getText().toString().isEmpty();
     }
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+
+        // Check if the TextViews are not null before accessing them
+        if (usernameTextfield != null) {
+            outState.putString("username", usernameTextfield.getText().toString());
+        }
+        if (passwordTextfield != null) {
+            outState.putString("password", passwordTextfield.getText().toString());
+        }
+        if (confirmPasswordTextfield != null) {
+            outState.putString("confirmPassword", confirmPasswordTextfield.getText().toString());
+        }
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
+
+        // Check if the TextViews are not null before setting their text
+        if (savedInstanceState != null) {
+            if (usernameTextfield != null) {
+                usernameTextfield.setText(savedInstanceState.getString("username"));
+            }
+            if (passwordTextfield != null) {
+                passwordTextfield.setText(savedInstanceState.getString("password"));
+            }
+            if (confirmPasswordTextfield != null) {
+                confirmPasswordTextfield.setText(savedInstanceState.getString("confirmPassword"));
+            }
+        }
     }
 
 

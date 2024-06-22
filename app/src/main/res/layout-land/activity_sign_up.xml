@@ -36,7 +36,8 @@
                 android:id="@+id/SignUpButtonLandscape"
                 android:layout_width="359dp"
                 android:layout_height="64dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:background="#00BCD4"
                 android:backgroundTint="@color/black"
                 android:foregroundGravity="center"
@@ -47,30 +48,31 @@
                 android:textSize="20sp"
                 app:backgroundTint="#030420"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ConfirmTextfieldLandscape" />
+                app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordTextfield" />
 
             <Button
                 android:id="@+id/ClearButtonLandscape"
                 android:layout_width="359dp"
                 android:layout_height="64dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:background="#00BCD4"
                 android:foregroundGravity="center"
                 android:gravity="center"
+                android:onClick="clearAll"
                 android:text="@string/clear_all"
                 android:textAllCaps="true"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:onClick="clearAll"
                 app:backgroundTint="@android:color/secondary_text_light_nodisable"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ConfirmTextfieldLandscape" />
+                app:layout_constraintTop_toBottomOf="@+id/ConfirmPasswordTextfield" />
 
             <TextView
                 android:id="@+id/usernameLabelLandscape"
                 android:layout_width="233dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="48dp"
                 android:background="#DCEDFD"
                 android:gravity="center_horizontal"
                 android:text="@string/username"
@@ -83,7 +85,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/UsernameTextfieldLandscape"
+                android:id="@+id/UsernameTextfield"
                 android:layout_width="355dp"
                 android:layout_height="64dp"
                 android:layout_marginTop="8dp"
@@ -94,7 +96,6 @@
                 android:inputType="text"
                 android:saveEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/usernameLabelLandscape" />
 
@@ -102,7 +103,7 @@
                 android:id="@+id/passwordLabelLandscape"
                 android:layout_width="139dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="180dp"
                 android:background="#DCEDFD"
                 android:gravity="center_horizontal"
                 android:text="@string/password"
@@ -112,10 +113,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/UsernameTextfieldLandscape" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/PasswordtextfieldLandscape"
+                android:id="@+id/PasswordTextfield"
                 android:layout_width="355dp"
                 android:layout_height="64dp"
                 android:layout_marginTop="8dp"
@@ -133,7 +134,7 @@
                 android:id="@+id/confirmLabelLandscape"
                 android:layout_width="200dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:background="#DCEDFD"
                 android:gravity="center"
                 android:text="@string/confirm_password"
@@ -142,11 +143,12 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/PasswordtextfieldLandscape" />
+                app:layout_constraintTop_toBottomOf="@+id/PasswordTextfield" />
 
             <EditText
-                android:id="@+id/ConfirmTextfieldLandscape"
+                android:id="@+id/ConfirmPasswordTextfield"
                 android:layout_width="355dp"
                 android:layout_height="64dp"
                 android:layout_marginTop="8dp"
