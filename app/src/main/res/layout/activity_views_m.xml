@@ -102,18 +102,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.966" />
 
-    <Button
-        android:id="@+id/starbutton"
-        android:layout_width="57dp"
-        android:layout_height="52dp"
-        app:icon="@android:drawable/btn_star_big_off"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
-
     <TextView
         android:id="@+id/episodeTextView"
         android:layout_width="70dp"
