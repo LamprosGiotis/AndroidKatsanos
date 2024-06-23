@@ -8,6 +8,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.example.katsanosergasia.R;
 import com.example.katsanosergasia.Users.Users;
@@ -23,13 +26,20 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
         usernameTextfield = findViewById(R.id.UsernameTextfield);
         passwordTextfield = findViewById(R.id.PasswordTextfield);
         confirmPasswordTextfield = findViewById(R.id.ConfirmPasswordTextfield);
         progressDialog = new ProgressDialog(this);
     }
+
     /**
      * Αυτή η μέθοδος προσφέρει την διασύνδεση μεταξύ του κεντρικού μενού,και της πλατφόρμας διασύνδεσης
+     *
      * @param view Το νέο παράθυρο που θέλουμε να ανοίξουμε(Login)
      */
     public void openLogin(View view) {
@@ -38,6 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     /**
      * Αυτή η μέθοδος καθαρίζει τις τιμές από όλα τα fields και αφήνει ένα μικρό μήνυμα
+     *
      * @param view το View που είμαστε
      */
     public void clearAll(View view) {
@@ -49,6 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     /**
      * Αυτή η μέθοδος ελέχγει εάν το editfield είναι κενό(Διαφορετικά αν δεν είναι δεν χρήζει εκαθάριση)
+     *
      * @param textView
      */
     private void clearField(TextView textView) {
@@ -61,6 +73,7 @@ public class SignUpActivity extends AppCompatActivity {
      * Αυτή η μέθοδος προσσφέρει την υπηρεσία εγγραφής των χρηστών στην firebase Data base.
      * Συλλέγει όλες τις τιμές απο τα fields(credentials των χρηστων),και στην συνέχεια εάν έχουν ικανοποιηθεί τα κριτήρια,τότε η εγγραφή είναι επιτυχής.
      * Διαφορετικά θα εμφανίσει ένα μήνυμα βοήθειας προς τον χρήστη:π.χ. Ο χρήστης έχει διαφορετικά password στα passwordfield και confirmpasswordfield.
+     *
      * @param view
      */
     public void signUp(View view) {
@@ -86,13 +99,10 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         Users newUser = new Users(username, password);//Δημιουργούμε ένα αντικείμενο χρήστη
-        try {
-            progressDialog.setMessage("Registering user...");//Εμαφνίζουμε την πρόοδο
-            progressDialog.show();
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
+        progressDialog.setMessage("Registering user...");//Εμαφνίζουμε την πρόοδο
+        progressDialog.show();
+
 
         Users.addUser(newUser); // Προσθέτουμε τον χρήστη στην firebase
 
@@ -101,4 +111,22 @@ public class SignUpActivity extends AppCompatActivity {
         clearAll(null); // Καθαρίζουμε όλα τα fields αφού γίνει η εγγραφή
         startActivity(new Intent(this, LoginActivity.class));//Ανοίγουμε την login
     }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("username", usernameTextfield.getText().toString());
+        outState.putString("password", passwordTextfield.getText().toString());
+        outState.putString("confirmPassword", confirmPasswordTextfield.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            usernameTextfield.setText(savedInstanceState.getString("username"));
+            passwordTextfield.setText(savedInstanceState.getString("password"));
+            confirmPasswordTextfield.setText(savedInstanceState.getString("confirmPassword"));
+        }
+    }
+
 }

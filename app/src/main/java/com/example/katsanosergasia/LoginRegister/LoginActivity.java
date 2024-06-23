@@ -7,8 +7,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.example.katsanosergasia.MainMenu.MainActivity;
 import com.example.katsanosergasia.R;
@@ -37,6 +41,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.LoginGUI), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
         usernameField = findViewById(R.id.UsernameField);//Σύνδεση με τις τιμές των fields(Τα βρίσκουμε μέσω του resources->layout->ID->ComponentID)
         passwordField = findViewById(R.id.PasswordField);//Ομοίως για password
 
@@ -115,6 +124,21 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Failed to load data from Firebase", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("username", usernameField.getText().toString());
+        outState.putString("password", passwordField.getText().toString());
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        String savedUsername = savedInstanceState.getString("username");
+        String savedPassword = savedInstanceState.getString("password");
+        usernameField.setText(savedUsername);
+        passwordField.setText(savedPassword);
     }
 
 }

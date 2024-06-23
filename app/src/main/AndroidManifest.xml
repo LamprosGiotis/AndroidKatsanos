@@ -26,22 +26,22 @@
             android:exported="true" />
         <activity
             android:name=".FireBaseDataBase.Content"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".FireBaseDataBase.ContentDetailsActivity"
             android:exported="true" />
         <activity
             android:name=".FireBaseDataBase.FirebaseHelper"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainMenu.ViewsSActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainMenu.ViewsMActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginRegister.SignUpActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".MainMenu.MainActivity"
             android:exported="true"/>
