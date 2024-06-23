@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.katsanosergasia.FireBaseDataBase.Content;
 import com.example.katsanosergasia.FireBaseDataBase.FirebaseHelper;
+import com.example.katsanosergasia.LoginRegister.LoginActivity;
 import com.example.katsanosergasia.Movies.MovieListMain;
 import com.example.katsanosergasia.R;
 import com.example.katsanosergasia.Series.SeriesListMain;
@@ -91,5 +92,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    public void openLogin(View view) {
+        startActivity(new Intent(this, LoginActivity.class));//Ανοίγουμε κατευθείαν την Login
     }
 }

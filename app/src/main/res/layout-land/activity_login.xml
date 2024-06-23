@@ -109,6 +109,7 @@
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        android:onClick="login"
         app:backgroundTint="#030420"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/registerButton" />
