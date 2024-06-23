@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "1024550512954",
-    "project_id": "katsanosergasia-396ac",
-    "storage_bucket": "katsanosergasia-396ac.appspot.com"
+    "project_number": "505991697099",
+    "firebase_url": "https://katsanosergasia-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "katsanosergasia",
+    "storage_bucket": "katsanosergasia.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1024550512954:android:58dc52a199adc1ca0c8803",
+        "mobilesdk_app_id": "1:505991697099:android:0effe7ab19f4fd83a5414e",
         "android_client_info": {
           "package_name": "com.example.katsanosergasia"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA4X9q2Vn_A3meLa5oVR-UmXpiSLF792ds"
+          "current_key": "AIzaSyBk0JkFrdLeOmMvli9OhifnXUYosCJJ5EI"
         }
       ],
       "services": {
