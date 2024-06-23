@@ -20,19 +20,7 @@
         app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/watchflix" />
 
-    <Button
-        android:id="@+id/backbutton"
-        android:layout_width="54dp"
-        android:layout_height="45dp"
-        android:background="#000000"
-        android:onClick="openMainActivity"
-        app:icon="@drawable/baseline_arrow_back_24"
-        app:iconTint="#030420"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033" />
+
 
     <ImageView
         android:id="@+id/posterImageView"

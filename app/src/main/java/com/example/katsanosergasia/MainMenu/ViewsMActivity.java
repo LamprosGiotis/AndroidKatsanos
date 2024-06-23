@@ -2,14 +2,14 @@ package com.example.katsanosergasia.MainMenu;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+import android.view.View;
 import com.example.katsanosergasia.R;
 
 public class ViewsMActivity extends AppCompatActivity {
@@ -24,10 +24,6 @@ public class ViewsMActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
-
-    public void openMainActivity(View view){
-        startActivity(new Intent(this, MainActivity.class));
     }
 
 }

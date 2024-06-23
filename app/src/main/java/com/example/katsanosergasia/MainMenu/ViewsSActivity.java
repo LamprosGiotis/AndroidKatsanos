@@ -25,7 +25,5 @@ public class ViewsSActivity extends AppCompatActivity {
             return insets;
         });
     }
-    public void openMainActivity(View view){
-        startActivity(new Intent(this, MainActivity.class));
-    }
+
 }
