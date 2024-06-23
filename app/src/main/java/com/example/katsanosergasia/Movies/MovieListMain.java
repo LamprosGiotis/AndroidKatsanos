@@ -37,8 +37,5 @@ public class MovieListMain extends AppCompatActivity {
     }
 
 
-    public void onButtonClick(int position){
-        Intent intent = new Intent(MovieListMain.this, ViewsMActivity.class);
-        startActivity(intent);
-    }
+
 }

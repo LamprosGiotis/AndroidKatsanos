@@ -23,15 +23,15 @@ public class MovieList extends RecyclerView.Adapter<MovieList.ViewHolder> {
 
     private final String[] titles = {"lock stock", "snatch", "sin city", "fight club",
             "se7en", "carlito's way", "Donnie Brasco", "Heat"};
-    private final String[] ratings = {"9", "9", "3",
-            "2", "5", "7", "9",
-            "9"};
-    private final String[] durations = {"2", "2:25", "2",
-            "2", "2:10", "2:40", "2:40",
-            "1:30"};
-    private final String[] dates = {"2002", "2003", "2004",
-            "2005", "2006", "2007", "2008",
-            "2009"};
+    private final String[] ratings = {"rating 9", "rating 9", "rating 3",
+            "rating 2", "rating 5", "rating 7", "rating 9",
+            "rating 9"};
+    private final String[] durations = {"duration 2", "duration 2:25", "duration 2",
+            "duration 2", "duration 2:10", "duration 2:40", "duration 2:40",
+            "duration 1:30"};
+    private final String[] dates = {"date 2002", "date 2003", "date 2004",
+            "date 2005", "date 2006", "date 2007", "date 2008",
+            "date 2009"};
     private final int[] images = { R.drawable.lockstock, R.drawable.snatch,
             R.drawable.sincity, R.drawable.fightclub, R.drawable.se7en,
             R.drawable.carlito, R.drawable.donnie, R.drawable.heat };
@@ -68,11 +68,7 @@ public class MovieList extends RecyclerView.Adapter<MovieList.ViewHolder> {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
                     int position = getAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION) {
-                        Intent intent = new Intent(context, ViewsMActivity.class);
-                        intent.putExtra("imageResId", imageList.get(position));
-                        context.startActivity(intent);
-                    }
+
                 }
             });
         }

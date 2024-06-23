@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/card_view"
     android:layout_margin="5dp"
-    card_view:cardBackgroundColor="#81C784"
+    android:foreground="?selectableItemBackground"
+    card_view:cardBackgroundColor="#dcedfd "
     card_view:cardCornerRadius="12dp"
     card_view:cardElevation="3dp"
-    card_view:contentPadding="4dp"
-    android:foreground="?selectableItemBackground">
+    card_view:contentPadding="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,44 +29,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:text="@string/item_title"
             android:textSize="30sp"
             card_view:layout_constraintStart_toEndOf="@+id/item_image"
-            card_view:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="16dp" />
+            card_view:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/item_rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/item_rating"
             card_view:layout_constraintStart_toEndOf="@+id/item_image"
-            card_view:layout_constraintTop_toBottomOf="@+id/item_title"
-            android:layout_marginLeft="16dp" />
+            card_view:layout_constraintTop_toBottomOf="@+id/item_title" />
 
         <TextView
             android:id="@+id/item_episodes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/item_duration"
             card_view:layout_constraintStart_toEndOf="@+id/item_image"
-            card_view:layout_constraintTop_toBottomOf="@+id/item_rating"
-            android:layout_marginLeft="16dp" />
+            card_view:layout_constraintTop_toBottomOf="@+id/item_rating" />
 
         <TextView
             android:id="@+id/item_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="116dp"
+            android:layout_marginLeft="116dp"
             android:layout_marginTop="8dp"
             android:text="@string/item_date"
             card_view:layout_constraintStart_toStartOf="@id/item_image"
-            card_view:layout_constraintTop_toBottomOf="@id/item_episodes"
-            android:layout_marginLeft="116dp" />
+            card_view:layout_constraintTop_toBottomOf="@id/item_episodes" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

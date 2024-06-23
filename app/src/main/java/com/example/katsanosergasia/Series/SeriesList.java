@@ -15,15 +15,15 @@ import com.google.android.material.snackbar.Snackbar;
 public class SeriesList extends RecyclerView.Adapter<SeriesList.ViewHolder> {
     private final String[] titles = {"seinfeld", "better call saul", "breaking bad", "under the dome",
             "fargo", "game of thrones", "it crowd", "ozark"};
-    private final String[] ratings = {"9", "9", "3",
-            "2", "5", "7", "9",
-            "9"};
-    private final String[] episodes = {"10", "20", "30",
-            "40", "50", "60", "70",
-            "80"};
-    private final String[] dates = {"2002", "2003", "2004",
-            "2005", "2006", "2007", "2008",
-            "2009"};
+    private final String[] ratings = {"rating 9", "rating 9", "rating 3",
+            "rating 2", "rating 5", "rating 7", "rating 9",
+            "rating 9"};
+    private final String[] episodes = {"episodes 10", "episodes 20", "episodes 30",
+            "episodes 40", "episodes 50", "episodes 60", "episodes 70",
+            "episodes 80"};
+    private final String[] dates = {"date 2002", "date 2003", "date 2004",
+            "date 2005", "date 2006", "date 2007", "date 2008",
+            "date 2009"};
     private final int[] images = { R.drawable.seinfeld, R.drawable.bcs,
             R.drawable.breakingbad, R.drawable.dome, R.drawable.fargo,
             R.drawable.got, R.drawable.itcrowd, R.drawable.ozark };
