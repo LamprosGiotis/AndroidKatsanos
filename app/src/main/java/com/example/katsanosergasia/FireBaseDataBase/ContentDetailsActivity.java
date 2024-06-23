@@ -1,24 +1,11 @@
 package com.example.katsanosergasia.FireBaseDataBase;
-
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.katsanosergasia.FireBaseDataBase.Content;
 import com.example.katsanosergasia.R;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 public class ContentDetailsActivity extends AppCompatActivity {
     private TextView titleTextView, starsTextView, dateTextView, runtimeTextView, seasonsTextView, episodesTextView, reviewTextView;
@@ -122,5 +109,4 @@ public class ContentDetailsActivity extends AppCompatActivity {
                     .into(posterImageView);
         }
     }
-
 }
