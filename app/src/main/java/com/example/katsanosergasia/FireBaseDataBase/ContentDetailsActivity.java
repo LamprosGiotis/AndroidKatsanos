@@ -1,16 +1,18 @@
 package com.example.katsanosergasia.FireBaseDataBase;
+
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.katsanosergasia.R;
 import com.squareup.picasso.Picasso;
 
-
 public class ContentDetailsActivity extends AppCompatActivity {
     private TextView titleTextView, starsTextView, dateTextView, runtimeTextView, seasonsTextView, episodesTextView, reviewTextView;
     private ImageView posterImageView;
-    private Content content; // Store Content object to retain state
+    private Content content;
 
     private static final String TAG = "ContentDetailsActivity";
     private static final String KEY_CONTENT = "content";
@@ -20,7 +22,7 @@ public class ContentDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Set the appropriate layout based on content type (movie or series)
+        // Ορισμός του κατάλληλου layout ανάλογα με τον τύπο περιεχομένου (ταινία ή σειρά)
         if (savedInstanceState != null) {
             int layoutId = savedInstanceState.getInt(KEY_LAYOUT_ID);
             setContentView(layoutId);
@@ -41,20 +43,20 @@ public class ContentDetailsActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        // Save the current layout ID and content object
+        // Αποθήκευση του τρέχοντος layout ID και του αντικειμένου content
         outState.putInt(KEY_LAYOUT_ID, getLayoutId());
         outState.putSerializable(KEY_CONTENT, content);
     }
 
     private int getLayoutId() {
-        // Determine which layout is currently set
+        // Προσδιορισμός του layout που είναι αυτή τη στιγμή ορισμένο
         return content.isMovie() ? R.layout.activity_views_m : R.layout.activity_views_s;
     }
 
     private void initializeViews() {
-        // Initialize views from the current layout
+        // Αρχικοποίηση των views από το τρέχον layout
         titleTextView = findViewById(R.id.titleTextView);
         starsTextView = findViewById(R.id.starsTextView);
         dateTextView = findViewById(R.id.dateTextView);
@@ -66,7 +68,7 @@ public class ContentDetailsActivity extends AppCompatActivity {
     }
 
     private void displayContentDetails(Content content) {
-        // Set text and image
+        // Ορισμός κειμένων και εικόνας
         if (titleTextView != null) {
             titleTextView.setText("Title: " + content.getTitle());
         }
@@ -85,10 +87,10 @@ public class ContentDetailsActivity extends AppCompatActivity {
                 runtimeTextView.setText("Runtime: " + content.getRuntime());
             }
             if (seasonsTextView != null) {
-                seasonsTextView.setText(""); // Hide for movie
+                seasonsTextView.setText(""); // Απόκρυψη για ταινία
             }
             if (episodesTextView != null) {
-                episodesTextView.setText(""); // Hide for movie
+                episodesTextView.setText(""); // Απόκρυψη για ταινία
             }
         } else {
             if (seasonsTextView != null) {
@@ -102,7 +104,7 @@ public class ContentDetailsActivity extends AppCompatActivity {
             }
         }
 
-        // Load image using Picasso
+        // Φόρτωση εικόνας χρησιμοποιώντας Picasso
         if (posterImageView != null && content.getImageUrl() != null && !content.getImageUrl().isEmpty()) {
             Picasso.get()
                     .load(content.getImageUrl())

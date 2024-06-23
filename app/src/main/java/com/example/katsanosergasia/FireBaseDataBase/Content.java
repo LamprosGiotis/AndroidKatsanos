@@ -6,15 +6,15 @@ public class Content implements Serializable {
     private String title;
     private String stars;
     private String date;
-    private String runtime; // Set to "N/A" for series
-    private int seasons;    // Set to 0 for movies
-    private int episodes;   // Set to 0 for movies
+    private String runtime; // Ορισμός σε "N/A" για σειρές
+    private int seasons;    // Ορισμός σε 0 για ταινίες
+    private int episodes;   // Ορισμός σε 0 για ταινίες
     private String review;
     private String imageUrl;
-    private boolean isMovie; // True if it's a movie, false if it's a series
+    private boolean isMovie; // True αν είναι ταινία, false αν είναι σειρά
 
     public Content() {
-        // Default constructor required for calls to DataSnapshot.getValue(Content.class)
+        // Default constructor που απαιτείται για κλήσεις σε DataSnapshot.getValue(Content.class)
     }
 
     public Content(String title, String stars, String date, String runtime, int seasons, int episodes, String review, String imageUrl, boolean isMovie) {

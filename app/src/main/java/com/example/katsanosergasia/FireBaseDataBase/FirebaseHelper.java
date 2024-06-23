@@ -10,7 +10,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class FirebaseHelper {
-    private DatabaseReference databaseReference;
+    private final DatabaseReference databaseReference;
     private static final String TAG = "FirebaseHelper";
 
     public FirebaseHelper() {
@@ -18,7 +18,7 @@ public class FirebaseHelper {
     }
 
     public void getContentByTitle(String title, final ContentDataListener listener) {
-        // Search in movies
+        // Αναζήτηση σε ταινίες
         Query movieQuery = databaseReference.child("movies").orderByChild("title").equalTo(title);
         movieQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -26,13 +26,14 @@ public class FirebaseHelper {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Content content = snapshot.getValue(Content.class);
-                        content.setMovie(true); // Mark as movie
-                        Log.d(TAG, "Movie found: " + content);
+                        assert content != null;
+                        content.setMovie(true); // Σήμανση ως ταινία
+                        Log.d(TAG, "Βρέθηκε ταινία: " + content);
                         listener.onContentDataReceived(content);
                         return;
                     }
                 } else {
-                    // Search in series if no movie is found
+                    // Αναζήτηση σε σειρές αν δεν βρεθεί ταινία
                     Query seriesQuery = databaseReference.child("series").orderByChild("title").equalTo(title);
                     seriesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -40,20 +41,21 @@ public class FirebaseHelper {
                             if (dataSnapshot.exists()) {
                                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                                     Content content = snapshot.getValue(Content.class);
-                                    content.setMovie(false); // Mark as series
-                                    Log.d(TAG, "Series found: " + content);
+                                    assert content != null;
+                                    content.setMovie(false); // Σήμανση ως σειρά
+                                    Log.d(TAG, "Βρέθηκε σειρά: " + content);
                                     listener.onContentDataReceived(content);
                                     return;
                                 }
                             } else {
-                                Log.d(TAG, "No content found for title: " + title);
+                                Log.d(TAG, "Δεν βρέθηκε περιεχόμενο με τίτλο: " + title);
                                 listener.onContentDataReceived(null);
                             }
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
-                            Log.e(TAG, "Error fetching series by title", databaseError.toException());
+                            Log.e(TAG, "Σφάλμα κατά την αναζήτηση σειράς με τίτλο", databaseError.toException());
                             listener.onError(databaseError.toException());
                         }
                     });
@@ -62,7 +64,7 @@ public class FirebaseHelper {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Log.e(TAG, "Error fetching movie by title", databaseError.toException());
+                Log.e(TAG, "Σφάλμα κατά την αναζήτηση ταινίας με τίτλο", databaseError.toException());
                 listener.onError(databaseError.toException());
             }
         });
