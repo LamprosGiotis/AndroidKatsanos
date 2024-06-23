@@ -123,6 +123,7 @@
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:onClick="signUp"
         app:backgroundTint="#030420"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

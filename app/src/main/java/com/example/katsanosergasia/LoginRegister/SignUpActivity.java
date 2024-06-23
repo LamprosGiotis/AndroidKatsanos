@@ -1,134 +1,104 @@
 package com.example.katsanosergasia.LoginRegister;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-import com.example.katsanosergasia.LoginRegister.LoginActivity;
 import com.example.katsanosergasia.R;
+import com.example.katsanosergasia.Users.Users;
 
-/**
- * {@code @Author} Lampros Giotis
- * Σχετική Περιγραφή:Αυτή η κλάση αναπαριστά ένα Register Αctivity μαζί με διάφορες μεθόδους για την ορθή υλοποίηση του.
- */
 public class SignUpActivity extends AppCompatActivity {
 
-    TextView usernameTextfield;
-    TextView passwordTextfield;
-    TextView confirmPasswordTextfield;
-
+    private TextView usernameTextfield;//Σύνδεση του textfield
+    private TextView passwordTextfield;//Ομοίως και για το password
+    private TextView confirmPasswordTextfield;//Για το confirm password
+    private ProgressDialog progressDialog;//Ένα αντικείμενο (για αισθητικούς λόγους)που κάνει display το progress
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sign_up);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
         usernameTextfield = findViewById(R.id.UsernameTextfield);
         passwordTextfield = findViewById(R.id.PasswordTextfield);
         confirmPasswordTextfield = findViewById(R.id.ConfirmPasswordTextfield);
+        progressDialog = new ProgressDialog(this);
     }
-
     /**
-     * Παρόμοια με την OpenRegister μέθοδο.Διασυνδέει την register με την login.
-     *
-     * @param view To activity που θέλουμε να ανοίξουμε(Register)
+     * Αυτή η μέθοδος προσφέρει την διασύνδεση μεταξύ του κεντρικού μενού,και της πλατφόρμας διασύνδεσης
+     * @param view Το νέο παράθυρο που θέλουμε να ανοίξουμε(Login)
      */
     public void openLogin(View view) {
-        //Ανοίγουμε κατευθείαν την login
-        startActivity(new Intent(this, LoginActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));//Ανοίγουμε κατευθείαν την Login
     }
 
     /**
-     * Αυτή η μέθοδος κάνει clear όλα τα fields παρέχοντας στον χρήστη μια μικρή βοήθεια όταν θέλει να καθαρίσει όλα τα πεδία,
-     * αντί να το κάνει χειροκίνητα σε μορφή "ένα-ένα"
-     * @param view Το activity που βρίσκεται το Clear All button.
+     * Αυτή η μέθοδος καθαρίζει τις τιμές από όλα τα fields και αφήνει ένα μικρό μήνυμα
+     * @param view το View που είμαστε
      */
     public void clearAll(View view) {
-        if (areAllFieldsEmpty()) { //Ελέχγουμε εάν όλα τα πεδία είναι άδεια με την χρήση της areAllFieldsEmpty
-            Toast.makeText(this, "Fields are already empty", Toast.LENGTH_SHORT).show();//Αφήνουμε ένα μικρό μήνυμα ενημέρωσης
-        } else {
-            clearField(usernameTextfield);//Αφαιρούμε την τρέχουσα τιμή του field,ομοίως και για τα υπόλοιπα fields,ασχέτως το orientation
-            clearField(passwordTextfield);
-            clearField(confirmPasswordTextfield);
-            Toast.makeText(this, "Fields cleared", Toast.LENGTH_SHORT).show();//Επίσης αφήνουμε ακόμη ένα μήνυμα ενημέρωσης
-        }
+        clearField(usernameTextfield);
+        clearField(passwordTextfield);
+        clearField(confirmPasswordTextfield);
+        Toast.makeText(this, "Fields cleared", Toast.LENGTH_SHORT).show();
     }
 
     /**
-     *  Αυτή η μέθοδος "καθαρίζει" την τρέχουσα τιμή του field
-     * @param textView το επιλεγόμενο field που πρόκυται η τιμή του να γίνει clear
+     * Αυτή η μέθοδος ελέχγει εάν το editfield είναι κενό(Διαφορετικά αν δεν είναι δεν χρήζει εκαθάριση)
+     * @param textView
      */
     private void clearField(TextView textView) {
-        //Αρχικά ελέχγουμε εάν ο χρήστης έχει δώσει κάποιο input
-        if (textView != null) { //Εάν έχει,τότε πάει να πει ότι το field δεν είναι null,άρα η συνθήκη είναι έγκυρη
-            textView.setText("");//Θέτουμε την τιμή του σε " "
+        if (textView != null) {//Ελέχγουμε την κατάσταση του field πριν προβόυμε σε clear
+            textView.setText("");
         }
     }
 
     /**
-     *  Αυτή η μέθοδος ελέχγει εάν όλα τα fields είναι άδεια
-     * @return Επιστρέφει true Η false ανάλογα εάν ισχύει η συνθήκη της isEmpty.
+     * Αυτή η μέθοδος προσσφέρει την υπηρεσία εγγραφής των χρηστών στην firebase Data base.
+     * Συλλέγει όλες τις τιμές απο τα fields(credentials των χρηστων),και στην συνέχεια εάν έχουν ικανοποιηθεί τα κριτήρια,τότε η εγγραφή είναι επιτυχής.
+     * Διαφορετικά θα εμφανίσει ένα μήνυμα βοήθειας προς τον χρήστη:π.χ. Ο χρήστης έχει διαφορετικά password στα passwordfield και confirmpasswordfield.
+     * @param view
      */
-    private boolean areAllFieldsEmpty() {
-        return isEmpty(usernameTextfield) &&
-                isEmpty(passwordTextfield) &&
-                isEmpty(confirmPasswordTextfield);
+    public void signUp(View view) {
+        String username = usernameTextfield.getText().toString().trim();//Παίρνουμε τις τιμες απο τα πεδία και τριμάρουμε για τυχόν κενά(αριστερά ή δεξία)
+        String password = passwordTextfield.getText().toString().trim();//Ομόιως και για τα άλλα
+        String confirmPassword = confirmPasswordTextfield.getText().toString().trim();
 
-    }
-    /**
-     * Αυτή η μέθοδος ελέχγει εάν ένα field είναι άδειο,αθροιστικά θα το κάνει για όλα απο την areAllFieldsEmpty
-     * @param textView που θέλουμε να εξετάσουμε
-     * @return true εαν είναι null,διαφορετικά false
-     */
-    private boolean isEmpty(TextView textView) {
-        return textView == null || textView.getText().toString().isEmpty();
-    }
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        // Check if the TextViews are not null before accessing them
-        if (usernameTextfield != null) {
-            outState.putString("username", usernameTextfield.getText().toString());
+        if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {//Ελέχγουμε εάν κάποιο από τα πεδία δεν έχει συμπληρωθεί
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();//Διαφορετικά εμφανίζουμε ένα μήνυμα ενημέρωσης
+            return;
         }
-        if (passwordTextfield != null) {
-            outState.putString("password", passwordTextfield.getText().toString());
+
+        if (!password.equals(confirmPassword)) {//Ελέχγουμε εάν οι κωδικοί στα passwordfield και confirmpasswordfield είναι ίδιοι
+            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();//Διαφορετικά εμφανίζουμε ένα μήνυμα ενημέρωσης
+            return;
         }
-        if (confirmPasswordTextfield != null) {
-            outState.putString("confirmPassword", confirmPasswordTextfield.getText().toString());
+
+        Users.loadUsersFromFirebase(); // Φορτώνουμε τους χρήστες(Από την βάση)
+
+        if (Users.getUser(username) != null) {//Ελέχγουμε εάν κάποιος άλλος χρήστης έχει δώσει
+            Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show();
+            return;//
         }
+
+        Users newUser = new Users(username, password);//Δημιουργούμε ένα αντικείμενο χρήστη
+        try {
+            progressDialog.setMessage("Registering user...");//Εμαφνίζουμε την πρόοδο
+            progressDialog.show();
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        Users.addUser(newUser); // Προσθέτουμε τον χρήστη στην firebase
+
+        Toast.makeText(this, "User registered successfully", Toast.LENGTH_SHORT).show();//Αφήνουμε ένα μήνυμα ενημέρωσης
+
+        clearAll(null); // Καθαρίζουμε όλα τα fields αφού γίνει η εγγραφή
+        startActivity(new Intent(this, LoginActivity.class));//Ανοίγουμε την login
     }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        // Check if the TextViews are not null before setting their text
-        if (savedInstanceState != null) {
-            if (usernameTextfield != null) {
-                usernameTextfield.setText(savedInstanceState.getString("username"));
-            }
-            if (passwordTextfield != null) {
-                passwordTextfield.setText(savedInstanceState.getString("password"));
-            }
-            if (confirmPasswordTextfield != null) {
-                confirmPasswordTextfield.setText(savedInstanceState.getString("confirmPassword"));
-            }
-        }
-    }
-
-
 }
